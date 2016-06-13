@@ -12,10 +12,18 @@ class Tweet {
     
     let text: String
     let id: String
-    let user: String
+    let user: User?
     
     init?(json: [String: AnyObject])
     {
-        return nil
+        if let text = json["text"] as? String, id = json["id_str"] as? String, user = json["user"] as? [String: AnyObject]
+        {
+            self.text = text
+            self.id = id
+            self.user = User(json: user)
+        }
+        else{
+            return nil
+        }
     }
-} 
+}
