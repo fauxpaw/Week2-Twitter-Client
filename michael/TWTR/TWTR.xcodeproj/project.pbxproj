@@ -16,6 +16,7 @@
 		4C78760C1D0F472A0078C110 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C78760B1D0F472A0078C110 /* User.swift */; };
 		4C78760F1D0F4ADA0078C110 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C78760E1D0F4ADA0078C110 /* tweet.json */; };
 		4C7876111D0F4C230078C110 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7876101D0F4C230078C110 /* JSONParser.swift */; };
+		4CA0A1651D109E71007BF481 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A1641D109E71007BF481 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4C78760B1D0F472A0078C110 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4C78760E1D0F4ADA0078C110 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		4C7876101D0F4C230078C110 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		4CA0A1641D109E71007BF481 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				4C7876101D0F4C230078C110 /* JSONParser.swift */,
+				4CA0A1641D109E71007BF481 /* API.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				4C7876111D0F4C230078C110 /* JSONParser.swift in Sources */,
 				4C78760A1D0F47170078C110 /* Tweet.swift in Sources */,
 				4C7875F71D0F45B80078C110 /* ViewController.swift in Sources */,
+				4CA0A1651D109E71007BF481 /* API.swift in Sources */,
 				4C7875F51D0F45B80078C110 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +348,7 @@
 				4C7876051D0F45B80078C110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

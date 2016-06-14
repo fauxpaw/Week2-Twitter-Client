@@ -46,24 +46,6 @@ class ViewController: UIViewController {
 
 }
 
-//extension ViewController: UITableViewDataSource
-//{
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-//    {
-//        return self.datasource.count
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-//    {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
-//        let tweet = self.datasource[indexPath.row]
-//        
-//        cell.textLabel?.text = tweet.text
-//        
-//        return cell
-//    }
-//}
-
 extension ViewController
 {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
