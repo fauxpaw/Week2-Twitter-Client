@@ -18,12 +18,30 @@ class JSONParser {
             if let rootObject = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[String: AnyObject]]
             {
                 var tweets = [Tweet]()
-                for tweetJSON in rootObject {
-                    if let tweet = Tweet(json: tweetJSON){
-                        tweets.append(tweet)
-                    }
+                
+                let backgroundQueue = NSOperationQueue()
+                    backgroundQueue.addOperationWithBlock
+                    {
+                        if(NSOperationQueue.currentQueue() == backgroundQueue){
+                            print("background queue")
+                        }
+//                        print("We on dat background Queue bruh")
+                        for tweetJSON in rootObject {
+                            if let tweet = Tweet(json: tweetJSON){
+                                tweets.append(tweet)
+                            }
+                        }
+                        
+                        completion(success: true, tweets: tweets)
+                        
                 }
-                completion(success: true, tweets: tweets)
+                
+//                for tweetJSON in rootObject {
+//                    if let tweet = Tweet(json: tweetJSON){
+//                        tweets.append(tweet)
+//                    }
+//                }
+//                completion(success: true, tweets: tweets)
             }
         }
         catch {
