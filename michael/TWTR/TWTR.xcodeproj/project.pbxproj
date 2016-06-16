@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C7875F51D0F45B80078C110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7875F41D0F45B80078C110 /* AppDelegate.swift */; };
 		4C7875F71D0F45B80078C110 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7875F61D0F45B80078C110 /* ViewController.swift */; };
-		4C7875FA1D0F45B80078C110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7875F81D0F45B80078C110 /* Main.storyboard */; };
+		4C7875FA1D0F45B80078C110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7875F81D0F45B80078C110 /* Main.storyboard */; settings = {ASSET_TAGS = (Tweet, ); }; };
 		4C7875FC1D0F45B80078C110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C7875FB1D0F45B80078C110 /* Assets.xcassets */; };
 		4C7875FF1D0F45B80078C110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7875FD1D0F45B80078C110 /* LaunchScreen.storyboard */; };
 		4C78760A1D0F47170078C110 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7876091D0F47170078C110 /* Tweet.swift */; };
@@ -17,6 +17,9 @@
 		4C78760F1D0F4ADA0078C110 /* tweet.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C78760E1D0F4ADA0078C110 /* tweet.json */; };
 		4C7876111D0F4C230078C110 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7876101D0F4C230078C110 /* JSONParser.swift */; };
 		4CA0A1651D109E71007BF481 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A1641D109E71007BF481 /* API.swift */; };
+		4CA0A1851D11FA69007BF481 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A1841D11FA69007BF481 /* DetailViewController.swift */; };
+		4CA0A1871D120DC0007BF481 /* IdentityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A1861D120DC0007BF481 /* IdentityProtocol.swift */; };
+		4CA0A1891D121C2E007BF481 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A1881D121C2E007BF481 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		4C78760E1D0F4ADA0078C110 /* tweet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tweet.json; sourceTree = "<group>"; };
 		4C7876101D0F4C230078C110 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		4CA0A1641D109E71007BF481 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		4CA0A1841D11FA69007BF481 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4CA0A1861D120DC0007BF481 /* IdentityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityProtocol.swift; sourceTree = "<group>"; };
+		4CA0A1881D121C2E007BF481 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +92,9 @@
 		4C7876071D0F46C80078C110 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4CA0A1841D11FA69007BF481 /* DetailViewController.swift */,
 				4C7875F61D0F45B80078C110 /* ViewController.swift */,
+				4CA0A1881D121C2E007BF481 /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -115,6 +123,7 @@
 			children = (
 				4C7876101D0F4C230078C110 /* JSONParser.swift */,
 				4CA0A1641D109E71007BF481 /* API.swift */,
+				4CA0A1861D120DC0007BF481 /* IdentityProtocol.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -145,6 +154,9 @@
 		4C7875E91D0F45B80078C110 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					Tweet,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Michael Sweeney";
@@ -196,6 +208,9 @@
 				4C78760A1D0F47170078C110 /* Tweet.swift in Sources */,
 				4C7875F71D0F45B80078C110 /* ViewController.swift in Sources */,
 				4CA0A1651D109E71007BF481 /* API.swift in Sources */,
+				4CA0A1871D120DC0007BF481 /* IdentityProtocol.swift in Sources */,
+				4CA0A1891D121C2E007BF481 /* ProfileViewController.swift in Sources */,
+				4CA0A1851D11FA69007BF481 /* DetailViewController.swift in Sources */,
 				4C7875F51D0F45B80078C110 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

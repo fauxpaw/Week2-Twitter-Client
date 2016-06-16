@@ -17,6 +17,7 @@ class API {
     //singleton
     static let shared = API()
     var account: ACAccount?
+    
     //login function that takes a tuple parameter and returns void
     private func login(completion: (account: ACAccount?)-> ())
     {
@@ -128,12 +129,12 @@ class API {
                 JSONParser.tweetJSONFrom(data, completion: {(success, tweets) in
                     //return to main in async fashion
                     dispatch_async(dispatch_get_main_queue(), {
-                    completion(tweets: tweets)
+                        completion(tweets: tweets)
                         print("We're off to the main! /thread")
                     })
                 })
             case 400...499:
-                print("Client Error... You didnt want that anyway")
+                print("Client Error \(response.statusCode)... You didnt want that anyway")
                 completion(tweets: nil)
             case 500...599:
                 print("Server Error... You broke it!")
