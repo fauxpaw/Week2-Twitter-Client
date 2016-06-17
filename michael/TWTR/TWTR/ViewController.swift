@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, IdentityProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,17 +17,31 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier(DetailViewController.id(), sender: nil)
+    }
+    
+    //Created access to the cache instance (singleton?)
+    var cache : Cache<UIImage>? {
+        if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            return delegate.cache
+        }
+        return nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupTableView()
+        self.navigationItem.title = "Twittah"
         
     }
     
     func setupTableView (){
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.registerNib(UINib (nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
+        self.tableView.delegate = self
     }
 
     
@@ -36,17 +50,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         self.update()
         
-        
-        
-        // Make the call.
-        //        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) in
-        //            if success {
-        //                if let tweets = tweets {
-        //                    self.datasource = tweets
-        //                    print(tweets)
-        //                }
-        //            }
-        //        }
     }
     
     func update() {
@@ -59,12 +62,10 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        print("can a brotha get a segue?")
         if segue.identifier == DetailViewController.id() {
             
             guard let destinationDetailViewController = segue.destinationViewController as? DetailViewController else {return}
@@ -83,9 +84,10 @@ extension ViewController : UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let  cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
-        let tweet = self .datasource[indexPath.row]
-        cell.textLabel?.text = tweet.text
+        let  cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
+        
+        let tweet = self.datasource[indexPath.row]
+        cell.tweet = tweet
         
         return cell
     }

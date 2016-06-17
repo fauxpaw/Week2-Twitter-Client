@@ -39,7 +39,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="MZU-fv-CJH" kind="show" identifier="DetailViewController" id="ilb-wG-C0c"/>
+                                            <segue destination="MZU-fv-CJH" kind="show" identifier="DetailViewController" id="OUr-W6-fbF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -155,16 +155,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2a-HL-KDO">
-                                <rect key="frame" x="20" y="323" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2a-HL-KDO">
+                                <rect key="frame" x="282" y="323" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7fw-ep-0Ip">
+                                <rect key="frame" x="228" y="153" width="145" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="jO2-1y-DOb"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf3-ZM-ukV">
+                                <rect key="frame" x="228" y="153" width="145" height="128"/>
+                                <state key="normal" title="ToUserTimeline"/>
+                                <connections>
+                                    <segue destination="luY-OW-kXF" kind="show" identifier="UserTimelineViewController" id="BWv-Cr-ejg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Wql-UF-uOe" firstAttribute="top" secondItem="7fw-ep-0Ip" secondAttribute="bottom" constant="8" id="Mr2-z6-pzP"/>
                             <constraint firstItem="Wql-UF-uOe" firstAttribute="leading" secondItem="7sX-n4-763" secondAttribute="leading" constant="20" id="N6i-ob-Ktf"/>
+                            <constraint firstItem="7fw-ep-0Ip" firstAttribute="centerX" secondItem="7sX-n4-763" secondAttribute="centerX" id="RGv-zG-LZV"/>
+                            <constraint firstItem="7fw-ep-0Ip" firstAttribute="top" secondItem="WCJ-mb-TEh" secondAttribute="bottom" constant="89" id="Srt-EX-QCe"/>
                             <constraint firstAttribute="trailing" secondItem="Wql-UF-uOe" secondAttribute="trailing" constant="20" id="aUF-Ir-OcZ"/>
                             <constraint firstItem="f2a-HL-KDO" firstAttribute="centerX" secondItem="7sX-n4-763" secondAttribute="centerX" id="m2h-VA-3K7"/>
                             <constraint firstItem="f2a-HL-KDO" firstAttribute="top" secondItem="Wql-UF-uOe" secondAttribute="bottom" constant="13" id="oCb-NU-GA7"/>
@@ -172,6 +188,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profileImgView" destination="7fw-ep-0Ip" id="CVP-EN-SNP"/>
                         <outlet property="tweetLabel" destination="Wql-UF-uOe" id="Ozr-PS-qRK"/>
                         <outlet property="userLabel" destination="f2a-HL-KDO" id="9Qx-0K-Fez"/>
                     </connections>
@@ -179,6 +196,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goO-31-q0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1627" y="242"/>
+        </scene>
+        <!--UserTimelineViewController-->
+        <scene sceneID="raN-hk-6nJ">
+            <objects>
+                <viewController storyboardIdentifier="UserTimelineViewController" id="luY-OW-kXF" userLabel="UserTimelineViewController" customClass="UserTimelineViewController" customModule="TWTR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kms-fK-AmV"/>
+                        <viewControllerLayoutGuide type="bottom" id="eiy-Js-uMy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cOc-a4-cHi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eMu-lF-vG4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" id="pdp-Yq-du3" customClass="TweetCell" customModule="TWTR" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pdp-Yq-du3" id="jdp-9G-t1h">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="eMu-lF-vG4" id="U6d-2o-Reo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibA-JS-UXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2401" y="242"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FPC-kM-2pf">
