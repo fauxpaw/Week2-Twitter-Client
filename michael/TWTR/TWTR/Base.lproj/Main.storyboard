@@ -167,9 +167,8 @@
                                     <constraint firstAttribute="width" constant="145" id="jO2-1y-DOb"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf3-ZM-ukV">
-                                <rect key="frame" x="228" y="153" width="145" height="128"/>
-                                <state key="normal" title="ToUserTimeline"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf3-ZM-ukV">
+                                <rect key="frame" x="0.0" y="64" width="600" height="225"/>
                                 <connections>
                                     <segue destination="luY-OW-kXF" kind="show" identifier="UserTimelineViewController" id="BWv-Cr-ejg"/>
                                 </connections>
@@ -182,9 +181,13 @@
                             <constraint firstItem="7fw-ep-0Ip" firstAttribute="centerX" secondItem="7sX-n4-763" secondAttribute="centerX" id="RGv-zG-LZV"/>
                             <constraint firstItem="7fw-ep-0Ip" firstAttribute="top" secondItem="WCJ-mb-TEh" secondAttribute="bottom" constant="89" id="Srt-EX-QCe"/>
                             <constraint firstAttribute="trailing" secondItem="Wql-UF-uOe" secondAttribute="trailing" constant="20" id="aUF-Ir-OcZ"/>
+                            <constraint firstItem="Qf3-ZM-ukV" firstAttribute="top" secondItem="WCJ-mb-TEh" secondAttribute="bottom" id="aVX-58-tSU"/>
+                            <constraint firstItem="Qf3-ZM-ukV" firstAttribute="leading" secondItem="7sX-n4-763" secondAttribute="leading" id="cnM-u1-2PY"/>
                             <constraint firstItem="f2a-HL-KDO" firstAttribute="centerX" secondItem="7sX-n4-763" secondAttribute="centerX" id="m2h-VA-3K7"/>
+                            <constraint firstAttribute="trailing" secondItem="Qf3-ZM-ukV" secondAttribute="trailing" id="nEv-Gf-E4P"/>
                             <constraint firstItem="f2a-HL-KDO" firstAttribute="top" secondItem="Wql-UF-uOe" secondAttribute="bottom" constant="13" id="oCb-NU-GA7"/>
                             <constraint firstItem="Wql-UF-uOe" firstAttribute="centerY" secondItem="7sX-n4-763" secondAttribute="centerY" id="odX-Ow-rWx"/>
+                            <constraint firstItem="Wql-UF-uOe" firstAttribute="top" secondItem="Qf3-ZM-ukV" secondAttribute="bottom" id="rxA-Ir-1Ul"/>
                         </constraints>
                     </view>
                     <connections>

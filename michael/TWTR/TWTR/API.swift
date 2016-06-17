@@ -170,7 +170,7 @@ class API {
     func getUserTweets(userName: String, completion: (tweets: [Tweet]?) -> ())
     {
         
-        self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json?screen_name=\(userName)", completion: completion)
+        self.updateTimeline("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(userName)", completion: completion)
     }
     
     func getImage(urlString: String, completion: (image: UIImage)-> ()) {
